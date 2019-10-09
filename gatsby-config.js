@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Coffee Republic | A home of real coffee`,
+    description: `Discover the incredible taste of our coffee and more...`,
+    author: `@pavkrol`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,6 +15,21 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto Slab`,
+            variants: [`400`],
+          },
+          {
+            family: `Lato`,
+            variants: [`400`, `700`],
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

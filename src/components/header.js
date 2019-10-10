@@ -5,10 +5,14 @@ import Logo from "./Logo"
 import Navigation from "./Navigation"
 
 const HeaderWrapper = styled.header`
-  height: 8vh;
+  height: 70px;
   background-color: #ffffff;
   display: flex;
   padding: 0 50px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
 `
 
 const Header = () => (

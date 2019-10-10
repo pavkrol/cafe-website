@@ -5,11 +5,13 @@ import cafe_logo from "../images/cafe_logo.png"
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
+  flex: 1;
 `
 const CafeLogo = styled.img`
   width: 50px;
   height: auto;
   filter: grayscale(100%);
+  margin: 0;
 `
 
 const CafeName = styled.h1`
@@ -18,6 +20,19 @@ const CafeName = styled.h1`
   color: #000;
   font-weight: 400;
   text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  :after {
+    content: "by pavkrol";
+    display: block;
+    font-family: "Yellowtail", sans-serif;
+    font-size: 16px;
+    position: absolute;
+    bottom: -11px;
+    right: -24px;
+    transform: rotate(-16deg);
+    text-transform: lowercase;
+  }
 `
 const Logo = () => {
   return (

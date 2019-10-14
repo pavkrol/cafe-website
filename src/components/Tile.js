@@ -45,17 +45,17 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   z-index: 0;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.4s ease-in-out;
   :after {
     content: "";
     display: block;
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
     height: 100%;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
   }
   :hover {
-    transform: scale(1.05);
+    transform: scale(1.15) rotate(3deg);
   }
   :hover:after {
     background-color: rgba(0, 0, 0, 0.1);

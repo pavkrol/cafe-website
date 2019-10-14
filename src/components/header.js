@@ -5,7 +5,7 @@ import Logo from "./Logo"
 import Navigation from "./Navigation"
 
 const HeaderWrapper = styled.header`
-  height: 70px;
+  height: 80px;
   background-color: #ffffff;
   display: flex;
   padding: 0 50px;
@@ -13,6 +13,7 @@ const HeaderWrapper = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10;
 `
 
 const Header = () => (

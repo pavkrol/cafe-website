@@ -3,13 +3,13 @@ import styled from "styled-components"
 import Tile from "./Tile"
 
 const HeroWrapper = styled.section`
-  margin-top: 70px;
+  margin-top: 80px;
   background-color: #fff;
   height: calc(100vh - 70px);
   display: grid;
   grid-template-columns: 1fr 35vw;
   grid-template-rows: 1fr 55vh;
-  grid-gap: 10px;
+  grid-gap: 4px;
 `
 
 const Hero = () => {

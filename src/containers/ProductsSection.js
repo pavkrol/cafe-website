@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import ProductBox from "../components/ProductBox"
 import table_img from "../images/coffee_table.jpg"
+import food_img from "../images/food.jpg"
+import bread_img from "../images/bread.jpg"
 import { products_descriptions } from "../data/products_descriptions"
 
 const SectionWrapper = styled.section`
@@ -22,6 +24,16 @@ const ProductsSection = () => {
         image_src={table_img}
         gradient="#8d715b"
         text_data={products_descriptions[0]}
+      />
+      <ProductBox
+        image_src={food_img}
+        gradient="#848497"
+        text_data={products_descriptions[1]}
+      />
+      <ProductBox
+        image_src={bread_img}
+        gradient="#979C9C"
+        text_data={products_descriptions[2]}
       />
     </SectionWrapper>
   )

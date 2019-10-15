@@ -1,12 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import Button from "../components/Button"
-import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 const ProductWrapper = styled.div`
   width: 75vw;
   height: 45vw;
   position: relative;
+  margin-bottom: 100px;
   :after {
     content: "";
     display: block;
@@ -28,6 +28,7 @@ const Photo = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: relative;
 `
 
 const InfoBox = styled.div`
@@ -36,7 +37,7 @@ const InfoBox = styled.div`
   height: 34vw;
   background-color: white;
   padding: 65px;
-  top: calc(-25% - ${props => props.position * 0.05 + 15 + "px"});
+  top: -25%;
   transform: translateY(50%);
   right: -15vw;
   display: flex;
@@ -57,22 +58,10 @@ const InfoBox = styled.div`
 `
 
 const ProductBox = ({ image_src, gradient, text_data }) => {
-  /*window.addEventListener("scroll", () => {
-  let scrolled = window.pageYOffset
-  const image = document.querySelector(".parallaxed")
-  image.style.top = -(scrolled * 0.2) + "px"
-  })*/
-
-  const [parallax, setParallax] = useState(0)
-
-  useScrollPosition(({ prevPos, currPos }) => {
-    setParallax(currPos.y)
-  })
-
   return (
     <ProductWrapper gradient={gradient}>
       <Photo src={image_src} />
-      <InfoBox position={parallax}>
+      <InfoBox>
         <h2>{text_data.title}</h2>
         <p>{text_data.paragraph}</p>
         <Button>{text_data.button}</Button>

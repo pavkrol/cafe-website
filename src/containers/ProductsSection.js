@@ -24,16 +24,19 @@ const ProductsSection = () => {
         image_src={table_img}
         gradient="#8d715b"
         text_data={products_descriptions[0]}
+        position="left"
       />
       <ProductBox
         image_src={food_img}
         gradient="#848497"
         text_data={products_descriptions[1]}
+        position="right"
       />
       <ProductBox
         image_src={bread_img}
         gradient="#979C9C"
         text_data={products_descriptions[2]}
+        position="left"
       />
     </SectionWrapper>
   )

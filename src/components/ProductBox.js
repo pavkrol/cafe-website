@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import Button from "../components/Button"
 
 const ProductWrapper = styled.div`
+  margin-left: ${props => (props.position === "left" ? "0" : "17%")}
   width: 75vw;
   height: 45vw;
   position: relative;
@@ -14,7 +15,7 @@ const ProductWrapper = styled.div`
     height: 30vw;
     position: absolute;
     bottom: -40px;
-    right: -40px;
+    ${props => (props.position === "left" ? "right: -40px" : "left: -40px")}
     background: linear-gradient(
       90deg,
       ${props => props.gradient} 0%,
@@ -38,11 +39,13 @@ const InfoBox = styled.div`
   background-color: white;
   padding: 65px;
   top: -25%;
-  transform: translateY(50%);
-  right: -15vw;
+  transition: transform 0.2s ease-in-out;
+  transform: translateY(calc(50% + ${props => -props.parallax + "px"}));
+  ${props => (props.position === "left" ? "right: -15vw" : "left: -15vw")}
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  will-change: transform;
   h2 {
     font-family: "Lato", sans-serif;
     font-weight: 300;
@@ -57,11 +60,25 @@ const InfoBox = styled.div`
   }
 `
 
-const ProductBox = ({ image_src, gradient, text_data }) => {
+const ProductBox = ({ image_src, gradient, text_data, position }) => {
+  const ref = useRef()
+  const [parallax, setParallax] = useState(0)
+
+  useEffect(() => {
+    window.addEventListener("scroll", e => handleScroll(e))
+    return window.removeEventListener("scroll", e => handleScroll(e))
+  }, [])
+
+  const handleScroll = e => {
+    const offset = window.pageYOffset
+    const element_y = ref.current.getBoundingClientRect().y
+    setParallax((element_y + offset - offset) * 0.01)
+  }
+
   return (
-    <ProductWrapper gradient={gradient}>
+    <ProductWrapper position={position} gradient={gradient}>
       <Photo src={image_src} />
-      <InfoBox>
+      <InfoBox position={position} ref={ref} parallax={parallax}>
         <h2>{text_data.title}</h2>
         <p>{text_data.paragraph}</p>
         <Button>{text_data.button}</Button>

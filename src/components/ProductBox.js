@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import Button from "../components/Button"
+import Img from "gatsby-image"
 
 const ProductWrapper = styled.div`
   margin-left: ${props => (props.position === "left" ? "0" : "17%")}
@@ -77,7 +78,7 @@ const ProductBox = ({ image_src, gradient, text_data, position }) => {
 
   return (
     <ProductWrapper position={position} gradient={gradient}>
-      <Photo src={image_src} />
+      <Photo as={Img} fluid={image_src} />
       <InfoBox position={position} ref={ref} parallax={parallax}>
         <h2>{text_data.title}</h2>
         <p>{text_data.paragraph}</p>

@@ -12,6 +12,7 @@ const CafeLogo = styled.img`
   height: auto;
   filter: grayscale(100%);
   margin: 0;
+  transition: transform 0.2s ease-in;
 `
 
 const CafeName = styled.h1`
@@ -22,10 +23,12 @@ const CafeName = styled.h1`
   text-transform: uppercase;
   margin: 0;
   position: relative;
+  transition: transform 0.2s ease-in;
   :after {
     content: "by pavkrol";
     display: block;
     font-family: "Yellowtail", sans-serif;
+    transition: transform 0.2s ease-in;
     font-size: 16px;
     position: absolute;
     bottom: -11px;
@@ -34,11 +37,11 @@ const CafeName = styled.h1`
     text-transform: lowercase;
   }
 `
-const Logo = () => {
+const Logo = ({ scrolled }) => {
   return (
     <LogoWrapper>
-      <CafeLogo src={cafe_logo} alt="company logo" />
-      <CafeName>Coffee Republic</CafeName>
+      <CafeLogo src={cafe_logo} alt="company logo" scrolled={scrolled} />
+      <CafeName scrolled={scrolled}>Coffee Republic</CafeName>
     </LogoWrapper>
   )
 }

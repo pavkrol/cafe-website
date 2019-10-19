@@ -20,21 +20,21 @@ const ProductsSection = () => {
     query Images {
       coffee_img: file(relativePath: { eq: "coffee_table.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       food_img: file(relativePath: { eq: "food.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       bread_img: file(relativePath: { eq: "bread.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
         }

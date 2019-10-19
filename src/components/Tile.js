@@ -27,6 +27,12 @@ const TileLink = styled.a`
   position: relative;
   z-index: 2;
   transition: color 0.2s ease-in-out;
+  :hover + div {
+    transform: scale(1.15) rotate(3deg);
+    :after {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
 `
 
 const Background = styled.div`
@@ -54,21 +60,15 @@ const Background = styled.div`
     height: 100%;
     transition: background-color 0.4s ease-in-out;
   }
-  :hover {
-    transform: scale(1.15) rotate(3deg);
-  }
-  :hover:after {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
 `
 
 const Tile = ({ children, area }) => {
   return (
     <TileWrapper area={area}>
-      <Background area={area} />
       <TileLink area={area} as={Link}>
         {children}
       </TileLink>
+      <Background area={area} />
     </TileWrapper>
   )
 }

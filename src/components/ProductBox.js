@@ -73,7 +73,7 @@ const ProductBox = ({ image_src, gradient, text_data, position }) => {
   const handleScroll = e => {
     const offset = window.pageYOffset
     const element_y = ref.current.getBoundingClientRect().y
-    setParallax((element_y + offset - offset) * 0.01)
+    setParallax((element_y + offset - offset) * 0.005)
   }
 
   return (

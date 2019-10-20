@@ -20,13 +20,16 @@ const TileLink = styled.a`
   font-family: "Lato", sans-serif;
   font-size: ${props => (props.area === "left" ? "2.5rem" : "1.5rem")};
   line-height: ${props => (props.area === "left" ? "2.8rem" : "1.5rem")};
+  margin: 0 ${props => (props.area === "left" ? "25% 0 5%" : "5%")};
   margin-top: ${props => (props.area === "left" ? "20%" : "15%")};
-  padding: 0 ${props => (props.area === "left" ? "25% 0 5%" : "5%")};
-  display: block;
+  display: inline-block;
+  padding: 5px 10px;
   text-align: ${props => (props.area === "left" ? "left" : "right")};
   position: relative;
   z-index: 2;
   transition: color 0.2s ease-in-out;
+  background-color: #000000;
+  float: right;
   :hover + div {
     transform: scale(1.15) rotate(3deg);
     :after {

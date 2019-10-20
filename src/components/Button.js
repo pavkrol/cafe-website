@@ -5,13 +5,13 @@ const ButtonWrapper = styled.button`
   background: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
-  font-size: 1.1rem;
+  font-size: ${props => (props.size === "small" ? "0.9rem" : "1.1rem")};
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  width: 250px;
-  height: 85px;
+  width: ${props => (props.size === "small" ? "200px" : "250px")};
+  height: ${props => (props.size === "small" ? "60px" : "85px")};
   border: 0.5px solid black;
   cursor: pointer;
   overflow: hidden;
@@ -33,8 +33,8 @@ const ButtonWrapper = styled.button`
   }
 `
 
-const Button = ({ children }) => {
-  return <ButtonWrapper>{children}</ButtonWrapper>
+const Button = ({ children, size }) => {
+  return <ButtonWrapper size={size}>{children}</ButtonWrapper>
 }
 
 export default Button

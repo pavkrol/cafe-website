@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import Button from "../components/Button"
 import Img from "gatsby-image"
+import { element } from "prop-types"
 
 const ProductWrapper = styled.div`
   margin-left: ${props => (props.position === "left" ? "0" : "17%")}
@@ -71,9 +72,12 @@ const ProductBox = ({ image_src, gradient, text_data, position }) => {
   }, [])
 
   const handleScroll = e => {
-    const offset = window.pageYOffset
-    const element_y = ref.current.getBoundingClientRect().y
-    setParallax((element_y + offset - offset) * 0.005)
+    ref.current.getBoundingClientRect().top - window.screen.height < 400
+      ? setParallax(
+          (ref.current.getBoundingClientRect().top - window.screen.height) *
+            0.005
+        )
+      : setParallax(0)
   }
 
   return (

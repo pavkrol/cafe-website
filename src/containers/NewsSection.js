@@ -18,8 +18,52 @@ const NewsSectionWrapper = styled.section`
 const PostsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr) 60px;
+  grid-template-rows: 400px 100px 300px 80px;
   grid-gap: 50px;
+  div:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+  div:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+  }
+  div:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  div:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+  }
+  div:nth-child(5) {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+  }
+`
+
+const MoreNewsArea = styled.div`
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  :after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background: linear-gradient(
+      153.9deg,
+      rgba(154, 173, 156, 0.55) 0%,
+      #9aad9c 84.05%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
 `
 
 const NewsSection = () => {
@@ -55,7 +99,9 @@ const NewsSection = () => {
             />
           )
         })}
-        <Button>More news...</Button>
+        <MoreNewsArea>
+          <Button size="small">More news...</Button>
+        </MoreNewsArea>
       </PostsGrid>
     </NewsSectionWrapper>
   )

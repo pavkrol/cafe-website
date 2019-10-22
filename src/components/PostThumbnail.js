@@ -1,11 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "./Button"
+import CustomLink from "./CustomLink"
 
 const PostThumbnailWrapper = styled.div`
   background: #ffffff;
   padding: 40px 50px;
   position: relative;
+  display: flex;
+  flex-direction: column;
   :after {
     content: "";
     display: block;
@@ -21,6 +23,10 @@ const PostThumbnailWrapper = styled.div`
     );
     pointer-events: none;
     z-index: -1;
+  }
+  button {
+    margin-top: auto;
+    align-self: center;
   }
 `
 
@@ -54,7 +60,9 @@ const PostThumbnail = ({ title, date, excerpt, path }) => {
       <PostTitle>{title}</PostTitle>
       <PostDate>{date}</PostDate>
       <PostShortDesc>{excerpt}</PostShortDesc>
-      <Button size="small">Read more</Button>
+      <CustomLink size="small" to={path}>
+        Read more
+      </CustomLink>
     </PostThumbnailWrapper>
   )
 }

@@ -1,7 +1,7 @@
-import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
-const ButtonWrapper = styled.button`
+const CustomLink = styled(Link)`
   background: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
@@ -16,6 +16,8 @@ const ButtonWrapper = styled.button`
   cursor: pointer;
   overflow: hidden;
   position: relative;
+  text-decoration: none;
+  color: #000000;
   :after {
     background: #979c9c;
     content: "";
@@ -31,14 +33,9 @@ const ButtonWrapper = styled.button`
   :hover:after {
     transform: translateX(400px) rotate(35deg);
   }
+  :visited,
+  :active {
+    color: #000000;
+  }
 `
-
-const Button = ({ children, size, path }) => {
-  return (
-    <ButtonWrapper size={size} to={path}>
-      {children}
-    </ButtonWrapper>
-  )
-}
-
-export default Button
+export default CustomLink

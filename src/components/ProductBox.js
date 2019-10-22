@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import Button from "../components/Button"
 import Img from "gatsby-image"
-import { element } from "prop-types"
 
 const ProductWrapper = styled.div`
   margin-left: ${props => (props.position === "left" ? "0" : "17%")}

@@ -14,7 +14,7 @@ const SinglePostWrapper = styled.section`
   background-position: center;
   padding: 120px 15% 100px 15%;
   display: grid;
-  grid-template-columns: 1fr 500px;
+  grid-template-columns: 1fr 350px;
   grid-template-rows: auto 80px 1fr;
   grid-gap: 40px 100px;
   article {
@@ -33,6 +33,19 @@ const HomepageLink = styled(Link)`
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  :visited,
+  :active,
+  & {
+    text-decoration: none;
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 2rem;
+  }
+  :hover {
+    font-weight: 400;
+  }
 `
 
 const SinglePost = ({ post }) => {

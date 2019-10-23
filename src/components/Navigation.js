@@ -15,7 +15,8 @@ const NavList = styled.ul`
     justify-content: flex-start;
     height: 100vh;
     position: absolute;
-    top: ${props => (props.scrolled ? "60px" : "80px")};
+    padding-top: 80px;
+    top: 0;
     right: 0;
     transition: transform 0.3s ease-in-out;
     background: #ffffff;

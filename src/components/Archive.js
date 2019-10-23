@@ -4,12 +4,41 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 
 const ArchiveWrapper = styled.aside`
   background-color: #ffffff;
-  padding: 20px 30px;
+  padding: 30px;
   h3 {
     font-family: "Lato", sans-serif;
     font-weight: 300;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
+  }
+  ul {
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      font-family: "Montserrat", sans-serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.7rem;
+      color: #aeaeae;
+    }
+  }
+  a,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 2rem;
+  }
+  a:hover {
+    font-weight: 500;
   }
 `
 

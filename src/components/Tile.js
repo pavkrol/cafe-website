@@ -68,7 +68,7 @@ const Background = styled.div`
 const Tile = ({ children, area }) => {
   return (
     <TileWrapper area={area}>
-      <TileLink area={area} as={Link}>
+      <TileLink area={area} as={Link} to="/">
         {children}
       </TileLink>
       <Background area={area} />

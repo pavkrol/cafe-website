@@ -92,6 +92,7 @@ const NewsSection = () => {
         {POSTS.allMarkdownRemark.edges.map(post => {
           return (
             <PostThumbnail
+              key={post.node.frontmatter.path}
               title={post.node.frontmatter.title}
               date={post.node.frontmatter.date}
               path={post.node.frontmatter.path}

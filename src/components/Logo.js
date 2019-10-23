@@ -37,11 +37,11 @@ const CafeName = styled.h1`
     text-transform: lowercase;
   }
 `
-const Logo = ({ scrolled }) => {
+const Logo = () => {
   return (
     <LogoWrapper>
-      <CafeLogo src={cafe_logo} alt="company logo" scrolled={scrolled} />
-      <CafeName scrolled={scrolled}>Coffee Republic</CafeName>
+      <CafeLogo src={cafe_logo} alt="company logo" />
+      <CafeName>Coffee Republic</CafeName>
     </LogoWrapper>
   )
 }

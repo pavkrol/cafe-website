@@ -3,7 +3,7 @@ import bg_img from "../images/post_bg.jpg"
 import styled from "styled-components"
 import Post from "../components/Post"
 import Archive from "../components/Archive"
-import CustomLink from "../components/CustomLink"
+import { Link } from "gatsby"
 
 const SinglePostWrapper = styled.section`
   min-height: 100vh;
@@ -26,13 +26,23 @@ const SinglePostWrapper = styled.section`
     grid-row: 1 / 2;
   }
 `
+const HomepageLink = styled(Link)`
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+`
 
 const SinglePost = ({ post }) => {
   return (
     <SinglePostWrapper>
       <Post post={post} />
       <Archive />
-      <CustomLink>Go back to homepage</CustomLink>
+      <HomepageLink as={Link} to="/">
+        Go back to homepage
+      </HomepageLink>
     </SinglePostWrapper>
   )
 }

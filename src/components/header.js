@@ -4,6 +4,7 @@ import Logo from "./Logo"
 import Navigation from "./Navigation"
 import { useEffect, useState } from "react"
 import { useSpring, animated } from "react-spring"
+import Burger from "./Burger"
 
 const HeaderWrapper = styled(animated.header)`
   height: ${props => (props.scrolled ? "60px" : "80px")};
@@ -20,6 +21,8 @@ const HeaderWrapper = styled(animated.header)`
 
 const Header = () => {
   const [scrolled, toggleScrolling] = useState(false)
+  const [isOpen, toggleMenu] = useState(false)
+
   const shrink = useSpring({
     config: {
       duration: 200,
@@ -37,9 +40,10 @@ const Header = () => {
   }
 
   return (
-    <HeaderWrapper scrolled={scrolled} style={shrink}>
-      <Logo scrolled={scrolled} />
-      <Navigation />
+    <HeaderWrapper scrolled style={shrink}>
+      <Logo />
+      <Navigation isOpen={isOpen} scrolled={scrolled} />
+      <Burger isOpen={isOpen} toggleMenu={toggleMenu} />
     </HeaderWrapper>
   )
 }

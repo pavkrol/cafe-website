@@ -24,7 +24,7 @@ const PostThumbnailWrapper = styled.div`
     pointer-events: none;
     z-index: -1;
   }
-  button {
+  a {
     margin-top: auto;
     align-self: center;
   }

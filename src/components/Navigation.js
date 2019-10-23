@@ -9,11 +9,31 @@ const NavList = styled.ul`
   display: flex;
   justify-content: space-between;
   margin: 0;
+  @media (max-width: 1100px) {
+    width: 40%;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    position: absolute;
+    top: ${props => (props.scrolled ? "60px" : "80px")};
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+    background: #ffffff;
+    transform: ${props =>
+      props.isOpen ? "translateX(0)" : "translateX(100%)"};
+  }
 `
 
 const NavItem = styled.li`
   list-style: none;
   margin: 0 0 0 30px;
+  @media (max-width: 1100px) {
+    margin: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   a {
     text-decoration: none;
     font-family: "Lato", sans-serif;
@@ -44,24 +64,24 @@ const NavItem = styled.li`
   }
 `
 
-const Navigation = () => {
+const Navigation = ({ isOpen, scrolled }) => {
   return (
     <NavWrapper>
-      <NavList>
+      <NavList isOpen={isOpen} scrolled={scrolled}>
         <NavItem>
-          <Link>Our mission</Link>
+          <Link to="/">Our mission</Link>
         </NavItem>
         <NavItem>
-          <Link>Our cafe</Link>
+          <Link to="/">Our cafe</Link>
         </NavItem>
         <NavItem>
-          <Link>Our coffee</Link>
+          <Link to="/">Our coffee</Link>
         </NavItem>
         <NavItem>
-          <Link>Our food</Link>
+          <Link to="/">Our food</Link>
         </NavItem>
         <NavItem>
-          <Link>Shop</Link>
+          <Link to="/">Shop</Link>
         </NavItem>
       </NavList>
     </NavWrapper>

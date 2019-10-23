@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import Button from "../components/Button"
 import Img from "gatsby-image"
@@ -41,7 +41,7 @@ const InfoBox = styled.div`
   padding: 65px;
   top: -25%;
   transition: transform 0.2s ease-in-out;
-  transform: translateY(calc(50% + ${props => -props.parallax + "px"}));
+  transform: translateY(50%);
   ${props => (props.position === "left" ? "right: -15vw" : "left: -15vw")}
   display: flex;
   flex-direction: column;
@@ -62,27 +62,10 @@ const InfoBox = styled.div`
 `
 
 const ProductBox = ({ image_src, gradient, text_data, position }) => {
-  const ref = useRef()
-  const [parallax, setParallax] = useState(0)
-
-  useEffect(() => {
-    window.addEventListener("scroll", e => handleScroll(e))
-    return window.removeEventListener("scroll", e => handleScroll(e))
-  }, [])
-
-  const handleScroll = e => {
-    ref.current.getBoundingClientRect().top - window.screen.height < 400
-      ? setParallax(
-          (ref.current.getBoundingClientRect().top - window.screen.height) *
-            0.005
-        )
-      : setParallax(0)
-  }
-
   return (
     <ProductWrapper position={position} gradient={gradient}>
       <Photo as={Img} fluid={image_src} />
-      <InfoBox position={position} ref={ref} parallax={parallax}>
+      <InfoBox position={position}>
         <h2>{text_data.title}</h2>
         <p>{text_data.paragraph}</p>
         <Button>{text_data.button}</Button>

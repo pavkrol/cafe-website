@@ -9,7 +9,7 @@ const NavList = styled.ul`
   display: flex;
   justify-content: space-between;
   margin: 0;
-  @media (max-width: 1100px) {
+  @media (max-width: ${props => props.theme.large}) {
     width: 40%;
     flex-direction: column;
     justify-content: flex-start;
@@ -22,6 +22,9 @@ const NavList = styled.ul`
     background: #ffffff;
     transform: ${props =>
       props.isOpen ? "translateX(0)" : "translateX(100%)"};
+  }
+  @media (max-width: ${props => props.theme.mobile}) {
+    width: 100%;
   }
 `
 

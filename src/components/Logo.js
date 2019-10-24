@@ -13,6 +13,9 @@ const CafeLogo = styled.img`
   filter: grayscale(100%);
   margin: 0;
   transition: transform 0.2s ease-in;
+  @media (max-width: ${props => props.theme.medium}) {
+    width: 40px;
+  }
 `
 
 const CafeName = styled.h1`
@@ -29,12 +32,18 @@ const CafeName = styled.h1`
     display: block;
     font-family: "Yellowtail", sans-serif;
     transition: transform 0.2s ease-in;
-    font-size: 16px;
+    font-size: 1rem;
     position: absolute;
     bottom: -11px;
     right: -24px;
     transform: rotate(-16deg);
     text-transform: lowercase;
+  }
+  @media (max-width: ${props => props.theme.medium}) {
+    font-size: 1.4rem;
+    :after {
+      font-size: 0.8rem;
+    }
   }
 `
 const Logo = () => {

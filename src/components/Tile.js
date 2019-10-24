@@ -11,6 +11,14 @@ const TileWrapper = styled.div`
   position: relative;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
+  @media (max-width: ${props => props.theme.large}) {
+    grid-column: ${props => (props.area === "left" ? "1 / 3" : "span 1")};
+    grid-row: ${props => (props.area === "left" ? "1 / 2" : "2 / 3")};
+  }
+  @media (max-width: ${props => props.theme.mobile}) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
 `
 
 const TileLink = styled.a`
@@ -28,13 +36,21 @@ const TileLink = styled.a`
   position: relative;
   z-index: 2;
   transition: color 0.2s ease-in-out;
-  background-color: #000000;
+  background: #000000;
   float: right;
   :hover + div {
     transform: scale(1.15) rotate(3deg);
     :after {
       background-color: rgba(0, 0, 0, 0.1);
     }
+  }
+  @media (max-width: ${props => props.theme.large}) {
+    font-size: ${props => (props.area === "left" ? "2rem" : "1.5rem")};
+    line-height: ${props => (props.area === "left" ? "2.8rem" : "1.5rem")};
+  }
+  @media (max-width: ${props => props.theme.mobile}) {
+    font-size: ${props => (props.area === "left" ? "1.6rem" : "1.3rem")};
+    line-height: ${props => (props.area === "left" ? "2.2rem" : "1.5rem")};
   }
 `
 
@@ -69,7 +85,7 @@ const Tile = ({ children, area }) => {
   return (
     <TileWrapper area={area}>
       <TileLink area={area} as={Link} to="/">
-        {children}
+        <span>{children}</span>
       </TileLink>
       <Background area={area} />
     </TileWrapper>

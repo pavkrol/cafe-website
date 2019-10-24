@@ -4,6 +4,23 @@ import styled from "styled-components"
 const PostWrapper = styled.article`
   background-color: #ffffff;
   padding: 40px 30px;
+  position: relative;
+  :after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background: linear-gradient(
+      146.96deg,
+      rgba(132, 132, 151, 0.55) 0%,
+      #848497 84.05%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
   h2 {
     font-family: "Lato", sans-serif;
     font-weight: 300;

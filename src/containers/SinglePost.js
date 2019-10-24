@@ -17,6 +17,8 @@ const SinglePostWrapper = styled.section`
   grid-template-columns: 1fr 350px;
   grid-template-rows: auto 80px 1fr;
   grid-gap: 40px 100px;
+  position: relative;
+  z-index: 0;
   article {
     grid-column: 1 / 2;
     grid-row: 1 / 4;
@@ -33,6 +35,23 @@ const HomepageLink = styled(Link)`
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  position: relative;
+  :after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background: linear-gradient(
+      146.96deg,
+      rgba(132, 132, 151, 0.55) 0%,
+      #848497 84.05%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
   :visited,
   :active,
   & {

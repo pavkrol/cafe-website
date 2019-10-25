@@ -31,6 +31,12 @@ const ButtonWrapper = styled.button`
   :hover:after {
     transform: translateX(400px) rotate(35deg);
   }
+  @media (max-width: ${props => props.theme.medium}) {
+    width: 180px;
+    height: 55px;
+    font-size: 0.8rem;
+    margin: 0 auto;
+  }
 `
 
 const Button = ({ children, size, path }) => {

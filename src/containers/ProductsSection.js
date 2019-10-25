@@ -13,6 +13,14 @@ const SectionWrapper = styled.section`
   );
   padding: 80px;
   min-height: 500px;
+  @media (max-width: ${props => props.theme.large}) {
+    padding: 80px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: ${props => props.theme.mobile}) {
+    padding: 40px 30px 0 30px;
+  }
 `
 
 const ProductsSection = () => {

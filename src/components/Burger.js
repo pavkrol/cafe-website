@@ -15,7 +15,7 @@ const BurgerWrapper = styled.button`
   cursor: pointer;
   padding: 0;
   z-index: 10;
-  @media (min-width: ${props => props.theme.large}) {
+  @media (min-width: 1100px) {
     display: none;
   }
   &:focus {

@@ -19,7 +19,7 @@ const SectionWrapper = styled.section`
     flex-direction: column;
   }
   @media (max-width: ${props => props.theme.mobile}) {
-    padding: 40px 30px 0 30px;
+    padding: 40px 20px 0 20px;
   }
 `
 

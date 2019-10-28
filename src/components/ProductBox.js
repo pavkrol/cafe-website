@@ -30,13 +30,26 @@ const ProductWrapper = styled.div`
     width: 100%;
     margin-left: 0;
     margin-bottom: 400px;
+    :after {
+      width: 100%;
+      left: 40px;
+      right: -40px;
+    }
   }
   @media (max-width: ${props => props.theme.medium}) {
-    margin-bottom: 350px;
+    margin-bottom: 320px;
     min-height: 400px;
+    :after {
+      left: 20px;
+      right: -20px;
+      bottom: -20px;
+    }
   }
   @media (max-width: ${props => props.theme.mobile}) {
     min-height: 300px;
+    :after {
+      display: none;
+    }
   }
 `
 
@@ -97,9 +110,10 @@ const InfoBox = styled.div`
     }
   }
   @media (max-width: ${props => props.theme.mobile}) {
+    width: 90%;
     transform: translateY(35%)
       ${props =>
-        props.position === "left" ? "translateX(40%)" : "translateX(30%)"};
+        props.position === "left" ? "translateX(27.5%)" : "translateX(22.5%)"};
     padding: 40px 30px;
   }
 `

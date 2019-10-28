@@ -14,6 +14,12 @@ const NewsSectionWrapper = styled.section`
   align-items: center;
   z-index: 0;
   position: relative;
+  @media (max-width: 1300px) {
+    padding: 80px 8%;
+  }
+  @media (max-width: 600px) {
+    padding: 80px 4%;
+  }
 `
 const PostsGrid = styled.div`
   display: grid;
@@ -39,6 +45,18 @@ const PostsGrid = styled.div`
   div:nth-child(5) {
     grid-column: 2 / 3;
     grid-row: 4 / 5;
+  }
+  @media (max-width: ${props => props.theme.medium}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto) 80px;
+    div:nth-child(1),
+    div:nth-child(2),
+    div:nth-child(3),
+    div:nth-child(4),
+    div:nth-child(5) {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
   }
 `
 

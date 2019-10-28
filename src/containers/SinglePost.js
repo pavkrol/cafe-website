@@ -27,6 +27,29 @@ const SinglePostWrapper = styled.section`
     grid-column: 2 / 3;
     grid-row: 1 / 2;
   }
+  @media (max-width: 1400px) {
+    padding: 120px 8% 100px 8%;
+  }
+  @media (max-width: 1100px) {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 40px;
+    article {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    aside {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  }
+  @media (max-width: 850px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 80px;
+    article {
+      grid-column: span 1;
+    }
+  }
 `
 const HomepageLink = styled(Link)`
   grid-column: 2 / 3;
@@ -64,6 +87,10 @@ const HomepageLink = styled(Link)`
   }
   :hover {
     font-weight: 400;
+  }
+  @media (max-width: 1100px) {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 `
 

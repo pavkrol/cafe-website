@@ -35,6 +35,9 @@ const PostTitle = styled.h3`
   font-weight: 300;
   font-size: 1.8rem;
   text-transform: uppercase;
+  @media (max-width: ${props => props.theme.large}) {
+    font-size: 1.5rem;
+  }
 `
 
 const PostDate = styled.time`
@@ -52,6 +55,10 @@ const PostShortDesc = styled.p`
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.8rem;
+  @media (max-width: ${props => props.theme.large}) {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+  }
 `
 
 const PostThumbnail = ({ title, date, excerpt, path }) => {

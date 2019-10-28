@@ -37,5 +37,11 @@ const CustomLink = styled(Link)`
   :active {
     color: #000000;
   }
+  @media (max-width: 850px) {
+    width: 180px;
+    height: 55px;
+    font-size: 0.8rem;
+    margin: 0 auto;
+  }
 `
 export default CustomLink

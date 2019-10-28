@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "../components/Button"
+import CustomLink from "./CustomLink"
 import Img from "gatsby-image"
 
 const ProductWrapper = styled.div`
@@ -125,7 +125,7 @@ const ProductBox = ({ image_src, gradient, text_data, position }) => {
       <InfoBox position={position}>
         <h2>{text_data.title}</h2>
         <p>{text_data.paragraph}</p>
-        <Button>{text_data.button}</Button>
+        <CustomLink to="/fair-trade">Read more</CustomLink>
       </InfoBox>
     </ProductWrapper>
   )

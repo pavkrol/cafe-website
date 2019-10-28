@@ -1,9 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import beans from "../images/coffee_beans.jpg"
-import restaurant from "../images/restaurant.jpg"
-import coffee_pack from "../images/pack_of_coffee.jpg"
+import Img from "gatsby-image"
 
 const TileWrapper = styled.div`
   grid-column: ${props => (props.area === "left" ? "1 / 2" : "2 / 3")};
@@ -40,7 +38,7 @@ const TileLink = styled.a`
   float: right;
   :hover + div {
     transform: scale(1.15) rotate(3deg);
-    :after {
+    div:after {
       background-color: rgba(0, 0, 0, 0.1);
     }
   }
@@ -60,34 +58,32 @@ const Background = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: ${props =>
-    props.area === "left"
-      ? `url(${restaurant})`
-      : props.area === "top-right"
-      ? `url(${beans})`
-      : `url(${coffee_pack})`};
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   z-index: 0;
   transition: transform 0.4s ease-in-out;
-  :after {
-    content: "";
-    display: block;
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
+  div {
     height: 100%;
-    transition: background-color 0.4s ease-in-out;
+    :after {
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: rgba(0, 0, 0, 0.4);
+      width: 100%;
+      height: 100%;
+      transition: background-color 0.4s ease-in-out;
+      z-index: 1;
+    }
   }
 `
 
-const Tile = ({ children, area }) => {
+const Tile = ({ children, area, bg_img }) => {
   return (
     <TileWrapper area={area}>
       <TileLink area={area} as={Link} to="/">
         <span>{children}</span>
       </TileLink>
-      <Background area={area} />
+      <Background>
+        <Img fluid={bg_img} objectFit="cover" objectPosition="50% 50%" />
+      </Background>
     </TileWrapper>
   )
 }

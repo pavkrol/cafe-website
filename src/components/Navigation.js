@@ -73,7 +73,7 @@ const Navigation = ({ isOpen, scrolled }) => {
     <NavWrapper>
       <NavList isOpen={isOpen} scrolled={scrolled}>
         <NavItem>
-          <Link to="/">Our mission</Link>
+          <Link to="/fair-trade">Our mission</Link>
         </NavItem>
         <NavItem>
           <Link to="/">Our cafe</Link>

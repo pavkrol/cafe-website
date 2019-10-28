@@ -5,13 +5,16 @@ import CustomLink from "../components/CustomLink"
 
 const DetailsViewWrapper = styled.section`
   margin-top: 80px;
-  padding: 100px 10%;
+  padding: 100px 10% 60px 10%;
   background: linear-gradient(
     90deg,
     rgba(196, 196, 196, 0.14) 0.52%,
     rgba(208, 208, 208, 0.278984) 48.96%,
     #e7e7e7 99.48%
   );
+  @media (max-width: 1400px) {
+    padding: 100px 5% 60px 5%;
+  }
 `
 
 const Photo = styled.div`
@@ -24,16 +27,57 @@ const Photo = styled.div`
   div {
     height: 100%;
   }
+  @media (max-width: 1100px) {
+    width: 85%;
+    z-index: 0;
+  }
+  @media (max-width: 850px) {
+    height: 40vh;
+  }
 `
 const ContentBox = styled.article`
-  padding-left: 60%;
+  padding: 100px 100px 100px 55%;
   background-color: #ffffff;
+  h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 2rem;
+  }
+  @media (max-width: 1400px) {
+    padding: 100px 80px 100px 50%;
+  }
+  @media (max-width: 1100px) {
+    margin-top: 30vh;
+    padding: 100px;
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 850px) {
+    margin-top: 20vh;
+  }
+  @media (max-width: 600px) {
+    padding: 70px 40px;
+  }
 `
 
 const HomepageLink = styled(CustomLink)`
   position: fixed;
   left: calc(45% - 250px);
-  bottom: 100px;
+  top: calc(55vh + 180px);
+  @media (max-width: 1100px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+  }
 `
 
 const DetailsView = ({ img_src }) => {
@@ -47,9 +91,6 @@ const DetailsView = ({ img_src }) => {
           alt="photo of a black coffee on a table"
         />
       </Photo>
-      <HomepageLink as={CustomLink} to="/">
-        go back
-      </HomepageLink>
       <ContentBox>
         <h2>Fair Trade & Fair Play</h2>
         <p>
@@ -88,6 +129,9 @@ const DetailsView = ({ img_src }) => {
           producers, awareness raising, and in campaigning for changes in the
           rules and practice of conventional international trade.
         </p>
+        <HomepageLink as={CustomLink} to="/">
+          go back
+        </HomepageLink>
       </ContentBox>
     </DetailsViewWrapper>
   )

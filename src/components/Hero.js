@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Tile from "./Tile"
+import { useStaticQuery, graphql } from "gatsby"
 
 const HeroWrapper = styled.section`
   margin-top: 80px;
@@ -24,11 +25,42 @@ const HeroWrapper = styled.section`
 `
 
 const Hero = () => {
+  const images = useStaticQuery(graphql`
+    query Backgrounds {
+      cups: file(relativePath: { eq: "cups_of_coffee.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      restaurant: file(relativePath: { eq: "restaurant.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      menu: file(relativePath: { eq: "cakes.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   return (
     <HeroWrapper>
-      <Tile area="left">Come and visit our little place in the world</Tile>
-      <Tile area="top-right">Taste our coffee</Tile>
-      <Tile area="bottom-right">Check our products</Tile>
+      <Tile area="left" bg_img={images.restaurant.childImageSharp.fluid}>
+        Come and visit our little place in the world
+      </Tile>
+      <Tile area="top-right" bg_img={images.cups.childImageSharp.fluid}>
+        Taste our coffee
+      </Tile>
+      <Tile area="bottom-right" bg_img={images.menu.childImageSharp.fluid}>
+        Check our menu
+      </Tile>
     </HeroWrapper>
   )
 }

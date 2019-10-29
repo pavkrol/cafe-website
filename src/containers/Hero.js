@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Tile from "./Tile"
+import Tile from "../components/Tile"
 import { useStaticQuery, graphql } from "gatsby"
 
 const HeroWrapper = styled.section`

@@ -46,9 +46,9 @@ const CafeName = styled.h1`
     }
   }
 `
-const Logo = () => {
+const Logo = ({ className }) => {
   return (
-    <LogoWrapper>
+    <LogoWrapper className={className}>
       <CafeLogo src={cafe_logo} alt="company logo" />
       <CafeName>Coffee Republic</CafeName>
     </LogoWrapper>

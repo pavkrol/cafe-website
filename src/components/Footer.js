@@ -66,8 +66,19 @@ const FooterItem = styled.div`
     line-height: 2.45rem;
   }
   input {
+    margin-top: 15px;
     height: 40px;
     border: none;
+    padding-left: 10px;
+    ::placeholder {
+      color: transparent;
+    }
+    :not(:placeholder-shown) + label,
+    :focus + label {
+      top: -10px;
+      left: 0;
+      font-size: 0.5rem;
+    }
   }
   button {
     height: 40px;
@@ -82,6 +93,19 @@ const FooterItem = styled.div`
     :hover {
       background-color: #587a5c;
     }
+  }
+  form {
+    position: relative;
+  }
+  label {
+    display: block;
+    position: absolute;
+    top: 23px;
+    left: 10px;
+    transition: 0.2s ease-out all;
+    cursor: text;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
   }
   @media (max-width: 1500px) {
     place-self: start start;
@@ -132,10 +156,14 @@ const Footer = () => {
         <h3>Stay in touch</h3>
         <p>Join our newsletter:</p>
         <form>
-          <label>
-            <input type="email" required></input>
-            <button>&#10148;</button>
-          </label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Your email..."
+            required
+          ></input>
+          <label for="email">Your e-mail</label>
+          <button>&#10148;</button>
         </form>
       </FooterItem>
     </FooterWrapper>

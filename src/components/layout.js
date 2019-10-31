@@ -1,27 +1,26 @@
 import React from "react"
 import PropTypes from "prop-types"
-//import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header"
 import Footer from "./Footer"
+import { useSpring, animated } from "react-spring"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  /*const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)*/
+  const fade = useSpring({
+    from: {
+      opacity: 0,
+    },
+    to: {
+      opacity: 1,
+    },
+  })
 
   return (
-    <>
+    <animated.div style={fade}>
       <Header />
       <main>{children}</main>
       <Footer />
-    </>
+    </animated.div>
   )
 }
 

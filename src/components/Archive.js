@@ -1,11 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { animated } from "react-spring"
 
-const ArchiveWrapper = styled.aside`
+const ArchiveWrapper = styled(animated.aside)`
   background-color: #ffffff;
   padding: 30px;
   position: relative;
+  z-index: 0;
   :after {
     content: "";
     display: block;
@@ -59,7 +61,7 @@ const ArchiveWrapper = styled.aside`
   }
 `
 
-const Archive = () => {
+const Archive = ({ style }) => {
   const data = useStaticQuery(graphql`
     query PostsList {
       allMarkdownRemark(
@@ -80,7 +82,7 @@ const Archive = () => {
   `)
 
   return (
-    <ArchiveWrapper>
+    <ArchiveWrapper style={style}>
       <h3>Recent posts</h3>
       <ul>
         {data.allMarkdownRemark.edges.map(edge => {

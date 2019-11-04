@@ -4,7 +4,6 @@ import styled from "styled-components"
 import Post from "../components/Post"
 import Archive from "../components/Archive"
 import { Link } from "gatsby"
-import { useSpring, animated } from "react-spring"
 
 const SinglePostWrapper = styled.section`
   min-height: 100vh;
@@ -52,7 +51,7 @@ const SinglePostWrapper = styled.section`
     }
   }
 `
-const HomepageLink = styled(animated(Link))`
+const HomepageLink = styled(Link)`
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   display: flex;
@@ -96,29 +95,11 @@ const HomepageLink = styled(animated(Link))`
 `
 
 const SinglePost = ({ post }) => {
-  const slide_left = useSpring({
-    from: {
-      transform: "translateX(-100%)",
-    },
-    to: {
-      transform: "translateX(0)",
-    },
-  })
-
-  const slide_right = useSpring({
-    from: {
-      transform: "translateX(100%)",
-    },
-    to: {
-      transform: "translateX(0)",
-    },
-  })
-
   return (
     <SinglePostWrapper>
-      <Post post={post} style={slide_left} />
-      <Archive style={slide_right} />
-      <HomepageLink as={Link} to="/" style={slide_right}>
+      <Post post={post} />
+      <Archive />
+      <HomepageLink as={Link} to="/">
         Go back to homepage
       </HomepageLink>
     </SinglePostWrapper>

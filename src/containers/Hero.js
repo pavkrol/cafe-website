@@ -52,13 +52,25 @@ const Hero = () => {
   `)
   return (
     <HeroWrapper>
-      <Tile area="left" bg_img={images.restaurant.childImageSharp.fluid}>
+      <Tile
+        area="left"
+        bg_img={images.restaurant.childImageSharp.fluid}
+        linkTo="/gallery"
+      >
         Come and visit our little place in the world
       </Tile>
-      <Tile area="top-right" bg_img={images.cups.childImageSharp.fluid}>
+      <Tile
+        area="top-right"
+        bg_img={images.cups.childImageSharp.fluid}
+        linkTo="/"
+      >
         Taste our coffee
       </Tile>
-      <Tile area="bottom-right" bg_img={images.menu.childImageSharp.fluid}>
+      <Tile
+        area="bottom-right"
+        bg_img={images.menu.childImageSharp.fluid}
+        linkTo="/"
+      >
         Check our menu
       </Tile>
     </HeroWrapper>

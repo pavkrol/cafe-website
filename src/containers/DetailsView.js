@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image/withIEPolyfill"
 import CustomLink from "../components/CustomLink"
+import { useSpring, animated } from "react-spring"
 
 const DetailsViewWrapper = styled.section`
   margin-top: 80px;
@@ -17,13 +18,14 @@ const DetailsViewWrapper = styled.section`
   }
 `
 
-const Photo = styled.div`
+const Photo = styled(animated.div)`
   width: 45%;
   height: 55vh;
   position: fixed;
   top: 130px;
   left: 0;
   overflow: hidden;
+  z-index: 1;
   div {
     height: 100%;
   }
@@ -35,7 +37,7 @@ const Photo = styled.div`
     height: 40vh;
   }
 `
-const ContentBox = styled.article`
+const ContentBox = styled(animated.article)`
   padding: 100px 100px 100px 55%;
   background-color: #ffffff;
   h2 {
@@ -81,9 +83,27 @@ const HomepageLink = styled(CustomLink)`
 `
 
 const DetailsView = ({ img_src }) => {
+  const slide_left = useSpring({
+    from: {
+      transform: "translateX(-100%)",
+    },
+    to: {
+      transform: "translateX(0)",
+    },
+  })
+
+  const slide_right = useSpring({
+    from: {
+      transform: "translateX(100%)",
+    },
+    to: {
+      transform: "translateX(0)",
+    },
+  })
+
   return (
     <DetailsViewWrapper>
-      <Photo>
+      <Photo style={slide_left}>
         <Img
           fluid={img_src}
           objectFit="cover"
@@ -91,7 +111,7 @@ const DetailsView = ({ img_src }) => {
           alt="photo of a black coffee on a table"
         />
       </Photo>
-      <ContentBox>
+      <ContentBox style={slide_right}>
         <h2>Fair Trade & Fair Play</h2>
         <p>
           Fair trade is an institutional arrangement designed to help producers
@@ -129,10 +149,10 @@ const DetailsView = ({ img_src }) => {
           producers, awareness raising, and in campaigning for changes in the
           rules and practice of conventional international trade.
         </p>
-        <HomepageLink as={CustomLink} to="/">
-          go back
-        </HomepageLink>
       </ContentBox>
+      <HomepageLink as={CustomLink} to="/">
+        go back
+      </HomepageLink>
     </DetailsViewWrapper>
   )
 }

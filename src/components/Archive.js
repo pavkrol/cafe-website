@@ -1,29 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { animated } from "react-spring"
 
-const ArchiveWrapper = styled(animated.aside)`
+const ArchiveWrapper = styled.aside`
   background-color: #ffffff;
   padding: 30px;
   position: relative;
-  z-index: 0;
-  :after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: -15px;
-    right: -15px;
-    background: linear-gradient(
-      146.96deg,
-      rgba(132, 132, 151, 0.55) 0%,
-      #848497 84.05%
-    );
-    pointer-events: none;
-    z-index: -1;
-  }
   h3 {
     font-family: "Lato", sans-serif;
     font-weight: 300;
@@ -59,9 +41,25 @@ const ArchiveWrapper = styled(animated.aside)`
   a:hover {
     font-weight: 500;
   }
+  :after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background: linear-gradient(
+      146.96deg,
+      rgba(132, 132, 151, 0.55) 0%,
+      #848497 84.05%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
 `
 
-const Archive = ({ style }) => {
+const Archive = () => {
   const data = useStaticQuery(graphql`
     query PostsList {
       allMarkdownRemark(
@@ -82,7 +80,7 @@ const Archive = ({ style }) => {
   `)
 
   return (
-    <ArchiveWrapper style={style}>
+    <ArchiveWrapper>
       <h3>Recent posts</h3>
       <ul>
         {data.allMarkdownRemark.edges.map(edge => {

@@ -14,7 +14,7 @@ const BurgerWrapper = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
+  z-index: 1;
   @media (min-width: 1100px) {
     display: none;
   }

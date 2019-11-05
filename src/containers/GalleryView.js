@@ -21,12 +21,25 @@ const GalleryWrapper = styled.section`
 `
 
 const GalleryGrid = styled.article`
-  height: 600px;
+  min-height: 600px;
   background-color: #ffffff;
   width: 100%;
   display: grid;
   grid-template-columns: 30% 40% 30%;
   grid-template-rows: 35% 65%;
+  @media (max-width: 1100px) {
+    grid-template-rows: 40% 10% 50%;
+    grid-template-rows: 30% 70%;
+    margin: 130px 0;
+  }
+  @media (max-width: 800px) {
+    grid-template-rows: 400px auto auto 300px;
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: 600px) {
+    grid-template-rows: 300px auto auto 200px;
+    grid-template-columns: 1fr;
+  }
 `
 
 const Aside = styled.aside`
@@ -58,6 +71,14 @@ const Aside = styled.aside`
       line-height: 1.6rem;
     }
   }
+  @media (max-width: 1100px) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+  @media (max-width: 800px) {
+    grid-row: 2 / 3;
+    grid-column: span 1;
+  }
 `
 
 const Photo = styled(animated.div)`
@@ -70,6 +91,26 @@ const Photo = styled(animated.div)`
     bottom: ${props => (props.gridPosition === "bottom" ? "-50px" : "80px")};
     left: ${props => (props.gridPosition === "bottom" ? "0" : "-40px")};
   }
+  @media (max-width: 1100px) {
+    grid-column: ${props =>
+      props.gridPosition === "right" ? "3 / 4" : "1 / 3"};
+    grid-row: ${props => (props.gridPosition === "right" ? "1 / 3" : "3 / 4")};
+    div {
+      bottom: ${props => (props.gridPosition === "bottom" ? "-50px" : "0")};
+      left: ${props => (props.gridPosition === "bottom" ? "-30px" : "0")};
+      transform: ${props =>
+        props.gridPosition === "right" ? "scale(1.4)" : "scale(1)"};
+    }
+  }
+  @media (max-width: 800px) {
+    grid-column: span 1;
+    grid-row: ${props => (props.gridPosition === "right" ? "1 / 2" : "4 / 5")};
+    div {
+      transform: scale(1);
+      left: ${props => (props.gridPosition === "bottom" ? "-30px" : "40px")};
+      bottom: ${props => (props.gridPosition === "bottom" ? "-50px" : "30px")};
+    }
+  }
 `
 
 const GalleryButtonArea = styled.div`
@@ -77,6 +118,16 @@ const GalleryButtonArea = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 50px;
+  @media (max-width: 1100px) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    justify-content: flex-start;
+    padding: 0 15%;
+  }
+  @media (max-width: 800px) {
+    grid-column: span 1;
+    grid-row: 3 / 4;
+  }
 `
 
 const GalleryView = () => {

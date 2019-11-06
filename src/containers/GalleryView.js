@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import CustomLink from "../components/CustomLink"
-import Button from "../components/Button"
 import Img from "gatsby-image"
+import Slider from "../components/Slider"
+import Button from "../components/Button"
 import { useStaticQuery, graphql } from "gatsby"
 import { useSpring, animated } from "react-spring"
 
@@ -168,6 +169,12 @@ const GalleryView = () => {
     },
   })
 
+  const [galleryOpen, setGalleryOpen] = useState(false)
+
+  const toggleGallery = () => {
+    setGalleryOpen(!galleryOpen)
+  }
+
   return (
     <GalleryWrapper>
       <GalleryGrid>
@@ -183,7 +190,9 @@ const GalleryView = () => {
           </CustomLink>
         </Aside>
         <GalleryButtonArea>
-          <Button size="small">gallery</Button>
+          <Button size="small" clickFn={toggleGallery}>
+            gallery
+          </Button>
         </GalleryButtonArea>
         <Photo gridPosition="right" style={slide_right}>
           <Img
@@ -200,6 +209,7 @@ const GalleryView = () => {
           />
         </Photo>
       </GalleryGrid>
+      {galleryOpen ? <Slider closeFn={toggleGallery} /> : null}
     </GalleryWrapper>
   )
 }

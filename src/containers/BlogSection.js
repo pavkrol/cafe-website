@@ -119,7 +119,9 @@ const NewsSection = () => {
           )
         })}
         <MoreNewsArea>
-          <Button size="small">More news...</Button>
+          <Button size="small" onClick={() => console.log("click")}>
+            More news...
+          </Button>
         </MoreNewsArea>
       </PostsGrid>
     </NewsSectionWrapper>

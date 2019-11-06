@@ -39,9 +39,9 @@ const ButtonWrapper = styled.button`
   }
 `
 
-const Button = ({ children, size, path }) => {
+const Button = ({ children, size, clickFn }) => {
   return (
-    <ButtonWrapper size={size} to={path}>
+    <ButtonWrapper size={size} onClick={clickFn}>
       {children}
     </ButtonWrapper>
   )

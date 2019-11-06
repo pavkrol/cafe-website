@@ -30,7 +30,7 @@ const SliderWrapper = styled.div`
 
 const ImgWindow = styled.div`
   display: flex;
-  width: 4800px;
+  width: ${props => `${props.imagesCount * 800}px`};
   height: 600px;
   transform: ${props => `translateX(-${props.currentSlide * 800}px)`};
   transition: transform 0.2s ease-in-out;
@@ -101,7 +101,10 @@ const Slider = ({ closeFn }) => {
   return (
     <SliderBackground>
       <SliderWrapper>
-        <ImgWindow currentSlide={state.currentSlide}>
+        <ImgWindow
+          currentSlide={state.currentSlide}
+          imagesCount={images.allFile.edges.length}
+        >
           {images.allFile.edges.map((image, index) => {
             return (
               <Slide key={index} fluid={image.node.childImageSharp.fluid} />

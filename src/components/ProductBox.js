@@ -4,7 +4,7 @@ import CustomLink from "./CustomLink"
 import Img from "gatsby-image"
 
 const ProductWrapper = styled.div`
-  margin-left: ${props => (props.position === "left" ? "0" : "17%")}
+  margin-left: ${props => (props.position === "left" ? "0" : "17%")};
   width: 75vw;
   height: 45vw;
   min-height: 800px;
@@ -17,7 +17,7 @@ const ProductWrapper = styled.div`
     height: 30vw;
     position: absolute;
     bottom: -40px;
-    ${props => (props.position === "left" ? "right: -40px" : "left: -40px")}
+    ${props => (props.position === "left" ? "right: -40px" : "left: -40px")};
     background: linear-gradient(
       90deg,
       ${props => props.gradient} 0%,
@@ -69,7 +69,7 @@ const InfoBox = styled.div`
   top: -25%;
   transition: transform 0.2s ease-in-out;
   transform: translateY(50%);
-  ${props => (props.position === "left" ? "right: -250px" : "left: -250px")}
+  ${props => (props.position === "left" ? "right: -250px" : "left: -250px")};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -86,11 +86,11 @@ const InfoBox = styled.div`
     line-height: 2.2rem;
   }
   @media (max-width: 1500px) {
-    ${props => (props.position === "left" ? "right: -15%" : "left: -15%")}
+    ${props => (props.position === "left" ? "right: -15%" : "left: -15%")};
   }
   @media (max-width: 1100px) {
     width: 80%;
-    ${props => (props.position !== "left" ? "right: -20%" : "left: -20%")}
+    ${props => (props.position !== "left" ? "right: -20%" : "left: -20%")};
     top: 0;
     transform: translateY(55%)
       ${props =>

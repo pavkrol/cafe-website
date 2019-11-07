@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import Layout from "./Layout"
-import SEO from "./Seo"
+import Layout from "./layout"
+import SEO from "./seo"
 import SinglePost from "../containers/SinglePost"
 import { graphql } from "gatsby"
 

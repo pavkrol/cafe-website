@@ -1,7 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import GalleryView from "../containers/GalleryView"
-import SEO from "../components/seo"
+import SEO from "../components/Seo"
 import { theme } from "../components/theme"
 import { ThemeProvider } from "styled-components"
 

@@ -76,16 +76,13 @@ const Navigation = ({ isOpen, scrolled }) => {
           <Link to="/fair-trade">Our mission</Link>
         </NavItem>
         <NavItem>
-          <Link to="/">Our cafe</Link>
+          <Link to="/gallery">Our cafe</Link>
         </NavItem>
         <NavItem>
           <Link to="/">Our coffee</Link>
         </NavItem>
         <NavItem>
           <Link to="/">Our food</Link>
-        </NavItem>
-        <NavItem>
-          <Link to="/">Shop</Link>
         </NavItem>
       </NavList>
     </NavWrapper>

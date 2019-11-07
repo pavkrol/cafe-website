@@ -1,6 +1,6 @@
 import React from "react"
-import Hero from "../containers/Hero"
 import Layout from "../components/layout"
+import Hero from "../containers/Hero"
 import SEO from "../components/seo"
 import ProductsSection from "../containers/ProductsSection"
 import BlogSection from "../containers/BlogSection"

@@ -13,12 +13,12 @@ const SectionWrapper = styled.section`
   );
   padding: 80px;
   min-height: 500px;
-  @media (max-width: ${props => props.theme.large}) {
+  @media (max-width: 1100px) {
     padding: 80px 40px 0 40px;
     display: flex;
     flex-direction: column;
   }
-  @media (max-width: ${props => props.theme.mobile}) {
+  @media (max-width: 600px) {
     padding: 40px 20px 0 20px;
   }
 `

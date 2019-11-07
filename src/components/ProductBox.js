@@ -25,7 +25,7 @@ const ProductWrapper = styled.div`
     );
     z-index: -1;
   }
-  @media (max-width: ${props => props.theme.large}) {
+  @media (max-width: 1100px) {
     min-height: 600px;
     width: 100%;
     margin-left: 0;
@@ -36,7 +36,7 @@ const ProductWrapper = styled.div`
       right: -40px;
     }
   }
-  @media (max-width: ${props => props.theme.medium}) {
+  @media (max-width: 850px) {
     margin-bottom: 320px;
     min-height: 400px;
     :after {
@@ -45,7 +45,7 @@ const ProductWrapper = styled.div`
       bottom: -20px;
     }
   }
-  @media (max-width: ${props => props.theme.mobile}) {
+  @media (max-width: 600px) {
     min-height: 300px;
     :after {
       display: none;
@@ -85,10 +85,10 @@ const InfoBox = styled.div`
     font-size: 1rem;
     line-height: 2.2rem;
   }
-  @media (max-width: ${props => props.theme.xlarge}) {
+  @media (max-width: 1500px) {
     ${props => (props.position === "left" ? "right: -15%" : "left: -15%")}
   }
-  @media (max-width: ${props => props.theme.large}) {
+  @media (max-width: 1100px) {
     width: 80%;
     ${props => (props.position !== "left" ? "right: -20%" : "left: -20%")}
     top: 0;
@@ -96,7 +96,7 @@ const InfoBox = styled.div`
       ${props =>
         props.position === "left" ? "translateX(40%)" : "translateX(30%)"};
   }
-  @media (max-width: ${props => props.theme.medium}) {
+  @media (max-width: 850px) {
     transform: translateY(45%)
       ${props =>
         props.position === "left" ? "translateX(40%)" : "translateX(30%)"};
@@ -109,7 +109,7 @@ const InfoBox = styled.div`
       line-height: 1.6rem;
     }
   }
-  @media (max-width: ${props => props.theme.mobile}) {
+  @media (max-width: 600px) {
     width: 90%;
     transform: translateY(35%)
       ${props =>

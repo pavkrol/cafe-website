@@ -46,7 +46,7 @@ const PostsGrid = styled.div`
     grid-column: 2 / 3;
     grid-row: 4 / 5;
   }
-  @media (max-width: ${props => props.theme.medium}) {
+  @media (max-width: 850px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto) 80px;
     div:nth-child(1),

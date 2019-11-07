@@ -31,7 +31,7 @@ const ButtonWrapper = styled.button`
   :hover:after {
     transform: translateX(400px) rotate(35deg);
   }
-  @media (max-width: ${props => props.theme.medium}) {
+  @media (max-width: 850px) {
     width: 180px;
     height: 55px;
     font-size: 0.8rem;

@@ -1,8 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { theme } from "../components/theme"
-import { ThemeProvider } from "styled-components"
 import DetailsView from "../containers/DetailsView"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -20,12 +18,10 @@ const FairTrade = () => {
   `)
 
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <SEO title="Fair Trade" />
-        <DetailsView img_src={image.fair_trade_img.childImageSharp.fluid} />
-      </Layout>
-    </ThemeProvider>
+    <Layout>
+      <SEO title="Fair Trade" />
+      <DetailsView img_src={image.fair_trade_img.childImageSharp.fluid} />
+    </Layout>
   )
 }
 

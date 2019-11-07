@@ -17,7 +17,7 @@ const HeaderWrapper = styled(animated.header)`
   width: 100%;
   z-index: 5;
   transition: height 0.2s ease-in;
-  @media (max-width: ${props => props.theme.large}) {
+  @media (max-width: 1100px) {
     padding: 0 2rem;
   }
 `

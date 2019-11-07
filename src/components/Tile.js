@@ -9,11 +9,11 @@ const TileWrapper = styled.div`
   position: relative;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
-  @media (max-width: ${props => props.theme.large}) {
+  @media (max-width: 1100px) {
     grid-column: ${props => (props.area === "left" ? "1 / 3" : "span 1")};
     grid-row: ${props => (props.area === "left" ? "1 / 2" : "2 / 3")};
   }
-  @media (max-width: ${props => props.theme.mobile}) {
+  @media (max-width: 600px) {
     grid-column: span 1;
     grid-row: span 1;
   }
@@ -42,11 +42,11 @@ const TileLink = styled.a`
       background-color: rgba(0, 0, 0, 0.1);
     }
   }
-  @media (max-width: ${props => props.theme.large}) {
+  @media (max-width: 1100px) {
     font-size: ${props => (props.area === "left" ? "2rem" : "1.5rem")};
     line-height: ${props => (props.area === "left" ? "2.8rem" : "1.5rem")};
   }
-  @media (max-width: ${props => props.theme.mobile}) {
+  @media (max-width: 600px) {
     font-size: ${props => (props.area === "left" ? "1.6rem" : "1.3rem")};
     line-height: ${props => (props.area === "left" ? "2.2rem" : "1.5rem")};
   }

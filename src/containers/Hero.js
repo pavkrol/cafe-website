@@ -14,11 +14,11 @@ const HeroWrapper = styled.section`
   @media (max-width: 1500px) {
     grid-template-columns: 1fr 45%;
   }
-  @media (max-width: ${props => props.theme.large}) {
+  @media (max-width: 1100px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 55% 1fr;
   }
-  @media (max-width: ${props => props.theme.mobile}) {
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
     grid-template-rows: 45% 25% 1fr;
   }

@@ -13,7 +13,7 @@ const CafeLogo = styled.img`
   filter: grayscale(100%);
   margin: 0;
   transition: transform 0.2s ease-in;
-  @media (max-width: ${props => props.theme.medium}) {
+  @media (max-width: 850px) {
     width: 40px;
   }
 `
@@ -39,7 +39,7 @@ const CafeName = styled.h1`
     transform: rotate(-16deg);
     text-transform: lowercase;
   }
-  @media (max-width: ${props => props.theme.medium}) {
+  @media (max-width: 850px) {
     font-size: 1.4rem;
     :after {
       font-size: 0.8rem;

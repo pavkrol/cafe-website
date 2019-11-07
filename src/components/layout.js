@@ -1,9 +1,9 @@
 import React from "react"
+import "./layout.css"
 import PropTypes from "prop-types"
 import Header from "./header"
 import Footer from "./Footer"
 import { useSpring, animated } from "react-spring"
-import "./layout.css"
 
 const Layout = ({ children }) => {
   const fade = useSpring({
